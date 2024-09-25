@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:salsaschool/models/category_model.dart'; // Import this for SvgPicture
 import 'package:salsaschool/models/membership_model.dart'; // Import this for
 import 'package:salsaschool/models/popular_model.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -21,6 +22,13 @@ class _HomePageState extends State<HomePage> {
     categories = CategoryModel.getCategories();
     memberships = MembershipModel.getMemberships();
     popularLinks = PopularModel.getPopularLinks();
+  }
+
+  void _launchURL(String url) async {
+    final Uri uri = Uri.parse(url);
+    if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
+      throw 'Could not launch $url';
+    }
   }
 
   @override
@@ -100,7 +108,10 @@ class _HomePageState extends State<HomePage> {
                           ],
                         ),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            // This is an anonymous function that calls _launchURL when tapped
+                            _launchURL(popularLinks[index].links);
+                          },
                           child: SvgPicture.asset(
                               'assets/icons/rightChevron.svg',
                               width: 30,
@@ -307,7 +318,7 @@ class _HomePageState extends State<HomePage> {
           filled: true,
           fillColor: Colors.white,
           contentPadding: const EdgeInsets.all(15),
-          hintText: 'Search Student',
+          hintText: 'Search class',
           hintStyle: const TextStyle(color: Color(0xffDDDADA), fontSize: 14),
           prefixIcon: Padding(
             padding: const EdgeInsets.all(16),
