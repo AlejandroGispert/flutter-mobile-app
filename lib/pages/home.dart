@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:salsaschool/models/category_model.dart'; // Import this for SvgPicture
+import 'package:salsaschool/models/membership_model.dart'; // Import this for
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,14 +13,16 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<CategoryModel> categories = [];
+  List<MembershipModel> memberships = [];
 
-  void _getCategories() {
+  void _getInitialInfo() {
     categories = CategoryModel.getCategories();
+    memberships = MembershipModel.getMemberships();
   }
 
   @override
   Widget build(BuildContext context) {
-    _getCategories();
+    _getInitialInfo();
     return Scaffold(
       appBar: buildAppBar(),
       backgroundColor: Colors.white,
@@ -28,6 +32,93 @@ class _HomePageState extends State<HomePage> {
           _searchField(), // Changed to method call
           SizedBox(height: 40),
           _categoriesSection(),
+          SizedBox(
+            height: 40,
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Text(
+                  'Courses',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Container(
+                  height: 240,
+                  child: ListView.separated(
+                      itemBuilder: (context, index) {
+                        return Container(
+                          width: 210,
+                          decoration: BoxDecoration(
+                              color:
+                                  memberships[index].boxColor.withOpacity(0.3),
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              SvgPicture.asset(memberships[index].iconPath),
+                              Text(
+                                memberships[index].name,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                ),
+                              ),
+                              Text(
+                                  memberships[index].level +
+                                      ' | ' +
+                                      memberships[index].duration,
+                                  style: TextStyle(
+                                      color: Color(0xff7B6F72),
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.w400)),
+                              Container(
+                                height: 45,
+                                width: 130,
+                                child: Center(
+                                    child: Text('View',
+                                        style: TextStyle(
+                                          color:
+                                              memberships[index].viewIsSelected
+                                                  ? Colors.white
+                                                  : Color(0xffC588F2),
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 14,
+                                        ))),
+                                decoration: BoxDecoration(
+                                    gradient: LinearGradient(colors: [
+                                      memberships[index].viewIsSelected
+                                          ? Color(0xff9DCEFF)
+                                          : Colors.transparent,
+                                      memberships[index].viewIsSelected
+                                          ? Color(0xff92A4FD)
+                                          : Colors.transparent,
+                                    ]),
+                                    borderRadius: BorderRadius.circular(50)),
+                              )
+                            ],
+                          ),
+                        );
+                      },
+                      separatorBuilder: (context, index) => SizedBox(width: 25),
+                      itemCount: memberships.length,
+                      scrollDirection: Axis.horizontal,
+                      padding: EdgeInsets.only(
+                        left: 20,
+                        right: 20,
+                      )))
+            ],
+          )
         ],
       ),
     );

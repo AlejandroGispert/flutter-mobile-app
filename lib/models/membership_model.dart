@@ -5,6 +5,7 @@ class MembershipModel {
   String iconPath;
   String level;
   String duration;
+  Color boxColor;
   bool viewIsSelected;
 
   MembershipModel({
@@ -12,6 +13,7 @@ class MembershipModel {
     required this.iconPath,
     required this.level,
     required this.duration,
+    required this.boxColor,
     required this.viewIsSelected,
   });
 
@@ -23,6 +25,7 @@ class MembershipModel {
       iconPath: 'assets/icons/search.svg',
       level: 'Beginner',
       duration: '1 hour',
+      boxColor: Colors.blue,
       viewIsSelected: true,
     ));
 
@@ -31,7 +34,8 @@ class MembershipModel {
       iconPath: 'assets/icons/search.svg',
       level: 'Beginner',
       duration: '1 hour',
-      viewIsSelected: true,
+      boxColor: Colors.blue,
+      viewIsSelected: false,
     ));
 
     memberships.add(MembershipModel(
@@ -39,6 +43,7 @@ class MembershipModel {
       iconPath: 'assets/icons/search.svg',
       level: 'Advanced',
       duration: '1 hour',
+      boxColor: Colors.blue,
       viewIsSelected: true,
     ));
 
@@ -47,6 +52,7 @@ class MembershipModel {
       iconPath: 'assets/icons/search.svg',
       level: 'All levels',
       duration: '1 hour',
+      boxColor: Colors.blue,
       viewIsSelected: true,
     ));
     return memberships;
