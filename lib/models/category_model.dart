@@ -16,25 +16,25 @@ class CategoryModel {
 
     categories.add(CategoryModel(
       name: 'Salsa',
-      iconPath: 'assets/icons/search.svg',
+      iconPath: 'assets/icons/bachata.svg',
       boxColor: Colors.yellow,
     ));
 
     categories.add(CategoryModel(
       name: 'Bachata',
-      iconPath: 'assets/icons/search.svg',
+      iconPath: 'assets/icons/bachata.svg',
       boxColor: Colors.blue,
     ));
 
     categories.add(CategoryModel(
       name: 'LadyStyling',
-      iconPath: 'assets/icons/search.svg',
+      iconPath: 'assets/icons/bachata.svg',
       boxColor: Colors.green,
     ));
 
     categories.add(CategoryModel(
       name: 'MenStyling',
-      iconPath: 'assets/icons/search.svg',
+      iconPath: 'assets/icons/bachata.svg',
       boxColor: Colors.red,
     ));
     return categories;

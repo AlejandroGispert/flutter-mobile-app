@@ -22,45 +22,45 @@ class PopularModel {
 
     popularLinks.add(PopularModel(
       name: 'mambo',
-      iconPath: 'assets/icons/search.svg',
+      iconPath: 'assets/icons/youtube.svg',
       level: 'Beginner',
-      duration: '1 hour',
+      duration: '2 minutes',
       boxColor: Colors.yellow,
       viewIsSelected: true,
     ));
 
     popularLinks.add(PopularModel(
       name: 'salsa',
-      iconPath: 'assets/icons/search.svg',
+      iconPath: 'assets/icons/youtube.svg',
       level: 'Beginner',
-      duration: '1 hour',
+      duration: '4 minutes',
       boxColor: Colors.yellow,
-      viewIsSelected: false,
+      viewIsSelected: true,
     ));
 
     popularLinks.add(PopularModel(
       name: 'son',
-      iconPath: 'assets/icons/search.svg',
+      iconPath: 'assets/icons/youtube.svg',
       level: 'Advanced',
-      duration: '1 hour',
+      duration: '3 minutes',
       boxColor: Colors.yellow,
       viewIsSelected: true,
     ));
 
     popularLinks.add(PopularModel(
       name: 'bachata',
-      iconPath: 'assets/icons/search.svg',
+      iconPath: 'assets/icons/youtube.svg',
       level: 'All levels',
-      duration: '1 hour',
+      duration: '3 minutes',
       boxColor: Colors.yellow,
       viewIsSelected: true,
     ));
 
     popularLinks.add(PopularModel(
       name: 'cha cha cha',
-      iconPath: 'assets/icons/search.svg',
+      iconPath: 'assets/icons/youtube.svg',
       level: 'All levels',
-      duration: '1 hour',
+      duration: '3 minutes',
       boxColor: Colors.yellow,
       viewIsSelected: true,
     ));

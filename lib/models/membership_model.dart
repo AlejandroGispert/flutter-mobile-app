@@ -22,7 +22,7 @@ class MembershipModel {
 
     memberships.add(MembershipModel(
       name: 'Student',
-      iconPath: 'assets/icons/search.svg',
+      iconPath: 'assets/icons/student.svg',
       level: 'Beginner',
       duration: '1 hour',
       boxColor: Colors.blue,
@@ -31,30 +31,31 @@ class MembershipModel {
 
     memberships.add(MembershipModel(
       name: '6 weeks',
-      iconPath: 'assets/icons/search.svg',
+      iconPath: 'assets/icons/bachata.svg',
       level: 'Beginner',
       duration: '1 hour',
       boxColor: Colors.blue,
-      viewIsSelected: false,
+      viewIsSelected: true,
     ));
 
     memberships.add(MembershipModel(
-      name: '6 weeks',
-      iconPath: 'assets/icons/search.svg',
+      name: 'PunchCard',
+      iconPath: 'assets/icons/salsacubana.svg',
+      level: 'All levels',
+      duration: '1 hour',
+      boxColor: Colors.blue,
+      viewIsSelected: true,
+    ));
+
+    memberships.add(MembershipModel(
+      name: 'Drop in',
+      iconPath: 'assets/icons/jazmodern.svg',
       level: 'Advanced',
       duration: '1 hour',
       boxColor: Colors.blue,
       viewIsSelected: true,
     ));
 
-    memberships.add(MembershipModel(
-      name: 'punchCard',
-      iconPath: 'assets/icons/search.svg',
-      level: 'All levels',
-      duration: '1 hour',
-      boxColor: Colors.blue,
-      viewIsSelected: true,
-    ));
     return memberships;
   }
 }

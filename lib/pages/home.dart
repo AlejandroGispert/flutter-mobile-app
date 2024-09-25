@@ -167,7 +167,11 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        SvgPicture.asset(memberships[index].iconPath),
+                        SvgPicture.asset(
+                          memberships[index].iconPath,
+                          width: 60,
+                          height: 60,
+                        ),
                         Text(
                           memberships[index].name,
                           style: const TextStyle(
@@ -342,10 +346,10 @@ class _HomePageState extends State<HomePage> {
   AppBar buildAppBar() {
     return AppBar(
       title: const Text(
-        'Salsa Academy',
+        'Salsa Casino School & Academy',
         style: TextStyle(
           color: Colors.green,
-          fontSize: 20,
+          fontSize: 15,
           fontWeight: FontWeight.bold,
         ),
       ),

@@ -66,6 +66,13 @@ flutter:
     - assets/icons/search.svg
     - assets/icons/filter.svg
     - assets/icons/switch.svg
+    - assets/icons/bachata.svg
+    - assets/icons/jazmodern.svg
+    - assets/icons/salsa-dancing.svg
+    - assets/icons/salsacubana.svg
+    - assets/icons/student.svg
+    - assets/icons/youtube.svg
+
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
